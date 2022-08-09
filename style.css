@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text: #EEEEEE;
+    --highlight: #787A91;
+    --body: #141E61;
+    --card: #0F044C;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.square-wrapper {
+    display: grid;
+    
+    background-color: var(--card);
+    padding: 10px;
+    width: 800px;
+    height: 800px;
+    justify-items: stretch;
+    align-content: stretch;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+}
+
+.square {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    transition: 500ms;
+}
+
+.square:hover {
+    background-color: var(--highlight);
+}
