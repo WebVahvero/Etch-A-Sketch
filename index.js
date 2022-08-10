@@ -1,8 +1,11 @@
 const container = document.getElementById("container")
 const gridSelection = document.getElementById("grid-value")
+const colorSelection = document.getElementById("colors")
 
 let sqrAmount = 16;
 let grid = 4;
+
+let currentColor = 'black'
 
 const squareWrap = document.createElement('div')
 squareWrap.classList.add('square-wrapper')
@@ -13,6 +16,7 @@ window.addEventListener('load', createGrid)
 window.addEventListener('load', getGrid)
 
 gridSelection.addEventListener("change", changeGrid);
+colorSelection.addEventListener("change", changeColor);
 
 function changeGrid() {
 
@@ -56,6 +60,35 @@ function changeGrid() {
 
 }
 
+function changeColor(){
+    switch(colorSelection.value) {
+        case "black":
+            currentColor = colorSelection.value
+        break;
+        case "red":
+            currentColor = colorSelection.value
+        break;
+        case "blue":
+            currentColor = colorSelection.value
+        break;
+        case "green":
+            currentColor = colorSelection.value
+        break;
+        case "yellow":
+            currentColor = colorSelection.value
+        break;
+        case "orange":
+            currentColor = colorSelection.value
+        break;
+        case "pink":
+            currentColor = colorSelection.value
+        break;
+        default:
+            currentColor = colorSelection.value
+        break;
+    }
+}
+
 function createGrid() {
     let output = "";
 
@@ -81,7 +114,7 @@ function getGrid() {
             }
             else {
                 e.target.classList.add('colored')
-                e.target.style.backgroundColor = 'red'
+                e.target.style.backgroundColor = currentColor
             }
         });
     });
