@@ -38,7 +38,7 @@ body {
 .square {
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.8);
-    transition: 500ms;
+    transition: 300ms;
 }
 
 .square:hover {

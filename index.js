@@ -10,6 +10,8 @@ container.appendChild(squareWrap)
 
 window.addEventListener('load', createGrid)
 
+window.addEventListener('load', getGrid)
+
 gridSelection.addEventListener("change", changeGrid);
 
 function changeGrid() {
@@ -50,6 +52,7 @@ function changeGrid() {
     }
 
     createGrid()
+    getGrid()
 
 }
 
@@ -58,10 +61,28 @@ function createGrid() {
 
     for(let i = 0; i < sqrAmount; i++) {
         output += `
-            <div class="square sqr-${i}"></div>
+            <div id="square-${i}" class="square"></div>
         `;
     }
     squareWrap.innerHTML = output;
             
     squareWrap.style.gridTemplate = `repeat(${grid}, 1fr) / repeat(${grid}, 1fr)`
+}
+
+function getGrid() {
+    const squares = document.querySelectorAll('.square')
+
+    squares.forEach((square) => {
+        square.addEventListener('click', (e) => {
+
+            if (e.target.classList[1] == 'colored') {
+                e.target.classList.remove('colored')
+                e.target.style.backgroundColor = 'white'
+            }
+            else {
+                e.target.classList.add('colored')
+                e.target.style.backgroundColor = 'red'
+            }
+        });
+    });
 }

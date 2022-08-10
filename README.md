@@ -20,7 +20,6 @@ Users should be able to:
 - Make a resizable grid
 - Color squares
 
-
 ### Links
 
 - The Odin Project site: [The Odin Project](https://www.theodinproject.com/lessons/foundations)
