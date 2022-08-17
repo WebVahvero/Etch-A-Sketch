@@ -9,8 +9,8 @@ let sqrAmount = 16;
 let grid = 4;
 canvasLabel.textContent = `Canvas Size ${gridSelection.value}x${gridSelection.value}`
 let currentColor = '#000000'
-border.checked = true;
 let isMouseDown = false
+border.checked = true
 
 const squareWrap = document.createElement('div')
 squareWrap.classList.add('square-wrapper')
@@ -21,6 +21,7 @@ window.addEventListener('load', colorGrid)
 
 gridSelection.onchange = () => (changeGrid())
 colorValue.onchange = () => (changeColor())
+border.onchange = () => (borderControl())
 eraseBtn.onclick = () => (changeGrid())
 
 document.body.onmousedown = () => (isMouseDown = true)
@@ -51,34 +52,22 @@ function createGrid() {
 
 function colorGrid() {
     const squares = document.querySelectorAll('.square')
-
-    
     squares.forEach((square) => {
         ['mousedown','mouseover'].forEach( evt => {
             square.addEventListener(evt, hoverColor, false)
         });
     })
+}
 
-    /*squares.forEach((square) => {
-        square.addEventListener('mousedown', (e) => {
-
-            if (e.target.classList[2] == 'colored') {
-                e.target.classList.remove('colored')
-                e.target.style.backgroundColor = 'white'
-            }
-            else {
-                e.target.classList.add('colored')
-                e.target.style.backgroundColor = currentColor
-                console.log(e.type)
-                console.log(isMouseDown)
-            }
-        });
-    });*/
-
+function borderControl() {
+    const squares = document.querySelectorAll('.square')
+    squares.forEach((square) => {
+        square.classList.toggle('border-active')
+    });
 }
 
 function hoverColor(e) {
-    if (e.target.classList[2] == 'colored') {
+    if (e.target.classList.contains('colored')) {
         if (e.type === 'mousedown') {
             e.target.classList.remove('colored')
             e.target.style.backgroundColor = 'white'
