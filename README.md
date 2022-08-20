@@ -24,6 +24,7 @@ Users should be able to:
 ### Links
 
 - The Odin Project site: [The Odin Project](https://www.theodinproject.com/lessons/foundations)
+- Live site: [Etch a Sketch](https://webvahvero.github.io/Etch-A-Sketch/)
 
 ## Author
 
