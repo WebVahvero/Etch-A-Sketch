@@ -19,6 +19,7 @@ Users should be able to:
 
 - Make a resizable grid
 - Color squares
+- Use awkwardly with touch devices
 
 ### Links
 

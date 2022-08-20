@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +15,7 @@
 
 html {
     font-size: 18px;
+    font-family: 'DynaPuff', cursive;
 }
 
 body {
@@ -20,24 +23,98 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 50px 0;
+    background-color: var(--body);
+    color: var(--text);
+}
+
+h1 {
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+}
+
+#form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: space-between;
+    width: 800px;
+    margin: 20px 0;
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type=range] {
+    cursor: pointer;
+}
+
+input[type=color] {
+    -webkit-appearance: none;
+    padding: 0;
+    border: none;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+input[type=color]::-webkit-color-swatch {
+    border: none;
+    border-radius: 100px;
+    padding: 0;
+}
+
+input[type=color]::-webkit-color-swatch-wrapper {
+    border: none;
+    border-radius: 100px;
+    padding: 0;
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: var(--card);
+    color: var(--text);
+    transition: 300ms;
+    cursor: pointer;
+    font-family: 'DynaPuff', cursive;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+button:hover {
+    background-color: var(--text);
+    color: var(--card);
 }
 
 .square-wrapper {
     display: grid;
-    
-    background-color: var(--card);
+    background-color: #000000;
     padding: 10px;
     width: 800px;
     height: 800px;
     justify-items: stretch;
     align-content: stretch;
     grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .square {
     background-color: white;
     transition: 300ms;
+    cursor: crosshair;
 }
 
 .border-active {
@@ -46,4 +123,69 @@ body {
 
 .square:hover {
     background-color: var(--highlight);
+}
+
+@media only screen and (max-width: 1000px) {
+    #form {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .wrap {
+        gap: 10px;
+    }
+    
+    input[type=color] {
+        width: 30px;
+        height: 30px;
+    }
+    
+    input[type=checkbox] {
+        width: 20px;
+        height: 20px;
+    }
+    
+    button {
+        padding: 5px 10px;
+        font-size: 18px;
+    }    
+
+    .square-wrapper {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    .wrap {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+}
+
+@media only screen and (max-width: 510px) {
+
+    #form {
+        padding: 0 50px;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    input[type=color] {
+        width: 40px;
+        height: 40px;
+    }
+    
+    input[type=checkbox] {
+        width: 25px;
+        height: 25px;
+    } 
+
+    .square-wrapper {
+        width: 300px;
+        height: 300px;
+    }
 }
